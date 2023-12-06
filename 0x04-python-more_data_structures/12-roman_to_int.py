@@ -3,7 +3,7 @@ def roman_to_int(roman_string):
     if not roman_string or type(roman_string) != str:
         return 0
     else:
-        result, i = 0, 0
+        result, cont = 0, 0
         num = {
             "CM": 900,
             "CD": 400,
@@ -19,11 +19,11 @@ def roman_to_int(roman_string):
             "V": 5,
             "I": 1,
         }
-        while i < len(roman_string):
-            if i + 1 < len(roman_string) and roman_string[i : i + 2] in num:
-                result += num[roman_string[i : i + 2]]
-                i += 2
+        while cont < len(roman_string):
+            if cont + 1 < len(roman_string) and roman_string[cont : cont + 2] in num:
+                result += num[roman_string[cont : cont + 2]]
+                cont += 2
             else:
-                result += num[roman_string[i]]
-                i += 1
+                result += num[roman_string[cont]]
+                cont += 1
         return result
